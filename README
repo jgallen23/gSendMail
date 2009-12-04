@@ -1,0 +1,9 @@
+gSendMail is a simple library to allow for sending email from your gmail or google apps on domains account.  There are two usages, including in your application or executing the gsendmail.py and passing in arguments
+
+Including in Application:
+	from gsendmail import GSendMail
+	g = GSendMail('sender@gmail.com', 'password')
+	g.send_html('rec@gmail.com', 'Subject', 'Body with <b>Html</b>')
+
+Calling from terminal:
+	python gsendmail.py -u sender@gmail.com -p password -t rec@gmail.com -s Subject -b "body with <b>Html</b>"
