@@ -1,4 +1,5 @@
 import smtplib
+import sys
 from email.MIMEText import MIMEText
 
 class GSendMail(object):
@@ -35,6 +36,8 @@ def main():
 
     if options.email and options.passwd:
         g = GSendMail(options.email, options.passwd)
+        if not options.body:
+            options.body = sys.stdin.read()
         g.send_html(options.to, options.subject, options.body)
     else:
         parser.print_help()
